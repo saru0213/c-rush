@@ -1,4 +1,9 @@
 "use client";
+
+import { useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim"; // Use slim version
+
 import React, { useState, useEffect } from "react";
 import {
   Code2,
@@ -18,7 +23,11 @@ import Organizer from "./components/Organizer";
 import GCOEY from "./components/GCOEY";
 import WinnersSection from "./components/Winner";
 import { GallerySection } from "./components/Gallary";
+
 export default function CRushEventPage() {
+   const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine); // Use `loadSlim` instead of `loadFull`
+  }, []);
   const [timeLeft, setTimeLeft] = useState({
     days: 1,
     hours: 5,
@@ -180,6 +189,40 @@ export default function CRushEventPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
       {/* Header */}
+        <Particles
+        id="tsparticles"
+        init={particlesInit}
+        options={{
+          background: { color: "#000000" }, // Background color
+          fpsLimit: 60,
+          particles: {
+            number: { value: 100, density: { enable: true, area: 800 } },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: false },
+            size: { value: 4, random: true },
+            move: { enable: true, speed: 1.5, direction: "none", outModes: "out" },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#ffffff",
+              opacity: 0.3,
+              width: 1,
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: { enable: true, mode: "grab" },
+              onClick: { enable: true, mode: "repulse" },
+            },
+            modes: {
+              grab: { distance: 200, links: { opacity: 0.5 } },
+              push: { quantity: 4 },
+            },
+          },
+        }}
+        className="absolute inset-0"
+      />
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
         <nav className="relative z-10 px-6 py-4">
@@ -371,6 +414,8 @@ export default function CRushEventPage() {
 
       {/* winner */}
       <WinnersSection />
+
+      
 
       {/* gcoey */}
       <GCOEY />
