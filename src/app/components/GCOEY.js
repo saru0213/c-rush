@@ -52,7 +52,7 @@ function GCOEY() {
               <div className="text-center">
                 <div
                   onClick={handlePlayClick}
-                  className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-red-700 transition-colors cursor-pointer"
+                  className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-red-700 transition-colors cursor-pointer lg:w-20 lg:h-20"
                 >
                   <svg
                     className="w-8 h-8 text-white ml-1"

@@ -288,71 +288,46 @@ export default function CRushEventPage() {
 
       {/* Event Details */}
       <section className="px-6 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Event Details
-          </h2>
-          <div className="">
-            <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-6 flex items-center">
-                <Trophy className="w-6 h-6 mr-3 text-yellow-400" />
-                Prizes
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
-                    1
-                  </div>
-                  <span>
-                    Goodies(Study table lamp, document file, water
-                    bottles, stickers, pen) + Certificate
-                  </span>
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">
+      Event Details
+    </h2>
+    <div>
+      <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-6 lg:p-8">
+        <h3 className="text-xl lg:text-2xl font-bold mb-6 flex items-center">
+          <Trophy className="w-6 h-5 lg:w-6 lg:h-6 mr-3 text-yellow-400" />
+          Prizes
+        </h3>
+        <div className="space-y-4 text-sm lg:text-base">
+          {[1, 2, 3, 4, 5].map((num, idx) => {
+            const colors = ["bg-yellow-500", "bg-gray-400", "bg-orange-500", "bg-orange-500", "bg-orange-500"];
+            const prizes = [
+              "Goodies (Study table lamp, document file, water bottles, stickers, pen) + Certificate",
+              "Goodies (keyboard & mouse combo, document file, water bottles, stickers, pen) + Certificate",
+              "Goodies (Big document file, water bottles, stickers, pen) + Certificate",
+              "Goodies (Laptop Bag, keyboard cover, bottle, file, pen, stickers) (1st at Game)",
+              "Goodies (sports water bottle, pen stand, stickers, file, pen) (2nd at Game)",
+            ];
+            return (
+              <div className="flex items-center space-x-3" key={num}>
+                <div
+                  className={`w-10 h-4 lg:w-8 lg:h-8 ${colors[idx]} rounded-full flex items-center justify-center text-black font-bold text-xs lg:text-sm`}
+                >
+                  {num}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center text-black font-bold text-sm">
-                    2
-                  </div>
-                  <span>
-                    Goodies(keyboard & mouse combo, document file,water
-                    bottles, stickers, pen) + Certificate
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
-                    3
-                  </div>
-                  <span>
-                    Goodies(Big document file, water bottles, stickers, pen) +
-                    Certificate
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
-                    4
-                  </div>
-                  <span>
-                    Goodies(Laptop Bag, keyboard cover, bottle, file, pen, stickers)
-                    (1st at Game)
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
-                    5
-                  </div>
-                  <span>
-                    Goodies(sports water bottle, pen stand, stickers, file, pen)(2nd
-                    at Game)
-                  </span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <CheckCircle className="w-6 h-6 text-green-400" />
-                  <span>Participation E-Certificates for All</span>
-                </div>
+                <span>{prizes[idx]}</span>
               </div>
-            </div>
+            );
+          })}
+          <div className="flex items-center space-x-3">
+            <CheckCircle className="w-5 h-5 lg:w-6 lg:h-6 text-green-400" />
+            <span>Participation E-Certificates for All</span>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Rules */}
       <section className="px-6 py-16">

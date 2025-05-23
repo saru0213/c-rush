@@ -1,22 +1,11 @@
 import React, { useState, useEffect } from "react";
 import {
-  Code2,
-  Trophy,
-  Clock,
-  Users,
-  ArrowRight,
-  CheckCircle,
-  Zap,
-  Calendar,
-  MapPin,
-  Star,
-  Award,
-  Medal,
   X,
   ChevronLeft,
   ChevronRight,
   Camera,
 } from "lucide-react";
+import Image from "next/image";
 
 // Gallery Component
 export const GallerySection = () => {
@@ -218,9 +207,11 @@ export const GallerySection = () => {
               onClick={() => openLightbox(image, index)}
             >
               <div className="aspect-video relative overflow-hidden">
-                <img
+                <Image
                   src={image.src}
                   alt={image.title}
+                  width={800}
+                  height={600}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -286,7 +277,7 @@ export const GallerySection = () => {
               {/* Close Button */}
               <button
                 onClick={closeLightbox}
-                className="absolute -top-12 right-0 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+                className="absolute top-2 right-0 w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -308,9 +299,12 @@ export const GallerySection = () => {
 
               {/* Image */}
               <div className="bg-gray-900 rounded-lg overflow-hidden">
-                <img
+                <Image
                   src={selectedImage.src}
                   alt={selectedImage.title}
+                  width={800}
+                  height={600}
+
                   className="max-w-full max-h-[70vh] object-contain"
                 />
 
