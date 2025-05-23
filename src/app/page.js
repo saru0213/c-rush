@@ -186,10 +186,8 @@ export default function CRushEventPage() {
     );
   };
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
-      {/* Header */}
-        <Particles
+  return (<>
+     <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
@@ -221,8 +219,11 @@ export default function CRushEventPage() {
             },
           },
         }}
-        className="absolute inset-0"
+      className="absolute inset-0"
       />
+    <div className="relative min-h-screen  text-white">
+      {/* Header */}
+       
       <header className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
         <nav className="relative z-10 px-6 py-4">
@@ -278,28 +279,7 @@ export default function CRushEventPage() {
         </div>
       </section>
 
-      {/* Countdown Timer */}
-      {/* <section className="px-6 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">
-            Event Starts In
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {Object.entries(timeLeft).map(([unit, value]) => (
-              <div
-                key={unit}
-                className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-lg p-6 text-center"
-              >
-                <div className="text-4xl font-bold text-blue-400 mb-2">
-                  {value.toString().padStart(2, "0")}
-                </div>
-                <div className="text-gray-400 uppercase text-sm">{unit}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
+        
       {/* Features */}
       <section className="px-6 py-16">
         <div className="max-w-7xl mx-auto">
@@ -424,8 +404,8 @@ export default function CRushEventPage() {
       <Organizer />
       <GallerySection />
 
-      {/* Footer */}
-      <footer className="border-t border-gray-800 px-6 py-8">
+     
+     <footer className="border-t border-gray-800 px-6 py-8">
         <div className="max-w-7xl mx-auto text-center text-gray-400">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Code2 className="w-6 h-6 text-blue-400" />
@@ -437,6 +417,8 @@ export default function CRushEventPage() {
           </p>
         </div>
       </footer>
+      
     </div>
+    </>
   );
 }

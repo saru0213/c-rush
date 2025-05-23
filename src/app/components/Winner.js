@@ -9,6 +9,7 @@ import Image from "next/image";
 
 const WinnersSection = () => {
   const [activeYear, setActiveYear] = useState("1");
+  
 
   const winnersData = {
     1: {
@@ -106,6 +107,7 @@ const WinnersSection = () => {
   return (
     <section className="px-6 py-20">
       <div className="max-w-7xl mx-auto">
+       
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Hall of Fame</h2>
