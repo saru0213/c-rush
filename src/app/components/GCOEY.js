@@ -1,7 +1,31 @@
 import { CheckCircle } from "lucide-react";
 import React from "react";
+import { useRef, useState, useEffect } from 'react';
+
 
 function GCOEY() {
+    const videoRef = useRef(null);
+  const [showOverlay, setShowOverlay] = useState(true);
+
+  const handlePlayClick = () => {
+    setShowOverlay(false);
+    videoRef.current?.play();
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      setShowOverlay(true); // Show overlay again after video ends
+    };
+
+    video.addEventListener('ended', handleEnded);
+
+    return () => {
+      video.removeEventListener('ended', handleEnded);
+    };
+  }, []);
   return (
     <div>
       <section className="px-6 py-20">
@@ -20,43 +44,47 @@ function GCOEY() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Video Section */}
-            <div className="space-y-6">
-              <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden">
-                <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center relative">
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-red-700 transition-colors cursor-pointer">
-                        <svg
-                          className="w-8 h-8 text-white ml-1"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                      <p className="text-white font-semibold">
-                        Team GCOEY in Action
-                      </p>
-                      <p className="text-gray-300 text-sm">
-                        Competition Highlights & Achievements
-                      </p>
-                    </div>
-                  </div>
-                  <video
-                    src="/gcoey.mp4"
-                    poster="/images/te.jpg"
-                    width={600}
-                    height={400}
-                    className="w-full h-full object-cover opacity-60"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+           <div className="space-y-6">
+               <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden">
+        <div className="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center relative">
+          {showOverlay && (
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center z-10">
+              <div className="text-center">
+                <div
+                  onClick={handlePlayClick}
+                  className="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mb-4 mx-auto hover:bg-red-700 transition-colors cursor-pointer"
+                >
+                  <svg
+                    className="w-8 h-8 text-white ml-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
                   >
-                    Your browser does not support the video tag.
-                  </video>
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                 </div>
+                <p className="text-white font-semibold">
+                  Team GCOEY in Action
+                </p>
+                <p className="text-gray-300 text-sm">
+                  Competition Highlights & Achievements
+                </p>
+              </div>
+            </div>
+          )}
+          <video
+            ref={videoRef}
+            src="/gcoey.mp4"
+            poster="/winners.jpg"
+            width={600}
+            height={400}
+            className="w-full h-full object-cover opacity-60"
+            playsInline
+            controls={false}
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
               </div>
 
               <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-6">

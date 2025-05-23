@@ -304,8 +304,8 @@ export default function CRushEventPage() {
                     1
                   </div>
                   <span>
-                    Goodies(Syudy table lamp,document file,water
-                    bottles,stickers,pen) + Certificate
+                    Goodies(Study table lamp, document file, water
+                    bottles, stickers, pen) + Certificate
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -313,8 +313,8 @@ export default function CRushEventPage() {
                     2
                   </div>
                   <span>
-                    Goodies(keyboard & mouse combo,document file,water
-                    bottles,stickers,pen) + Certificate
+                    Goodies(keyboard & mouse combo, document file,water
+                    bottles, stickers, pen) + Certificate
                   </span>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -322,7 +322,7 @@ export default function CRushEventPage() {
                     3
                   </div>
                   <span>
-                    Goodies(Big document file,water bottles,stickers,pen) +
+                    Goodies(Big document file, water bottles, stickers, pen) +
                     Certificate
                   </span>
                 </div>
@@ -331,7 +331,7 @@ export default function CRushEventPage() {
                     4
                   </div>
                   <span>
-                    Goodies(Laptop Bag,keyboard cover,bottle,file,pen,stickers)
+                    Goodies(Laptop Bag, keyboard cover, bottle, file, pen, stickers)
                     (1st at Game)
                   </span>
                 </div>
@@ -340,7 +340,7 @@ export default function CRushEventPage() {
                     5
                   </div>
                   <span>
-                    Goodies(sports water bottle,pen stand,stickers,file,pen)(2nd
+                    Goodies(sports water bottle, pen stand, stickers, file, pen)(2nd
                     at Game)
                   </span>
                 </div>

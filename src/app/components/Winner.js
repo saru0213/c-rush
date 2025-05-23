@@ -30,7 +30,7 @@ const WinnersSection = () => {
         {
           position: 2,
           name: "Rameshwar Kale",
-          college: "COEP",
+          college: "GCOEY",
           year: "First Year EXTC",
           score: 1720,
           solvedTime: "2h 52m",
@@ -43,7 +43,7 @@ const WinnersSection = () => {
         {
           position: 3,
           name: "Riya Jadhav",
-          college: "COEP",
+          college: "GCOEY",
           year: "First Year CS",
           score: 1620,
           solvedTime: "3h 15m",
@@ -55,50 +55,50 @@ const WinnersSection = () => {
         },
       ],
     },
-    2: {
-      title: "C-Rush 2.0 2k25 Champions",
-      winners: [
-        {
-          position: 1,
-          name: "Arjun Sharma & Prathamesh Desai",
-          college: "GCOEY",
-          year: "First Year",
-          score: 1850,
-          solvedTime: "2h 45m",
-          achievement: "Perfect Score + Fastest Solver",
-          currentRole: "1st at C-Rush 2.0 2k25 Finals",
-          image: "/winner.png",
-          quote:
-            "C-Rush challenged me to think beyond conventional solutions. The problems were crafted perfectly!",
-        },
-        {
-          position: 2,
-          name: "Priya Patel",
-          college: "GCOEY",
-          year: "First Year",
-          score: 1720,
-          solvedTime: "2h 52m",
-          achievement: "Perfect Score + Fastest Solver",
-          currentRole: "2nd at C-Rush 2.0 2k25 Finals",
-          image: "/winner.png",
-          quote:
-            "An amazing experience that pushed my programming skills to the next level.",
-        },
-        {
-          position: 3,
-          name: "Rahul Desai",
-          college: "GCOEY",
-          year: "First Year",
-          score: 1650,
-          solvedTime: "2h 58m",
-          achievement: "Perfect Score + Fastest Solver",
-          currentRole: "3rd at C-Rush 2.0 2k25 Finals",
-          image: "/winner.png",
-          quote:
-            "The competitive environment and challenging problems made this unforgettable.",
-        },
-      ],
-    },
+    // 2: {
+    //   title: "C-Rush 2.0 2k25 Champions",
+    //   winners: [
+    //     {
+    //       position: 1,
+    //       name: "Arjun Sharma & Prathamesh Desai",
+    //       college: "GCOEY",
+    //       year: "First Year",
+    //       score: 1850,
+    //       solvedTime: "2h 45m",
+    //       achievement: "Perfect Score + Fastest Solver",
+    //       currentRole: "1st at C-Rush 2.0 2k25 Finals",
+    //       image: "/winner.png",
+    //       quote:
+    //         "C-Rush challenged me to think beyond conventional solutions. The problems were crafted perfectly!",
+    //     },
+    //     {
+    //       position: 2,
+    //       name: "Priya Patel",
+    //       college: "GCOEY",
+    //       year: "First Year",
+    //       score: 1720,
+    //       solvedTime: "2h 52m",
+    //       achievement: "Perfect Score + Fastest Solver",
+    //       currentRole: "2nd at C-Rush 2.0 2k25 Finals",
+    //       image: "/winner.png",
+    //       quote:
+    //         "An amazing experience that pushed my programming skills to the next level.",
+    //     },
+    //     {
+    //       position: 3,
+    //       name: "Rahul Desai",
+    //       college: "GCOEY",
+    //       year: "First Year",
+    //       score: 1650,
+    //       solvedTime: "2h 58m",
+    //       achievement: "Perfect Score + Fastest Solver",
+    //       currentRole: "3rd at C-Rush 2.0 2k25 Finals",
+    //       image: "/winner.png",
+    //       quote:
+    //         "The competitive environment and challenging problems made this unforgettable.",
+    //     },
+    //   ],
+    // },
   };
 
   const currentWinners = winnersData[activeYear];
