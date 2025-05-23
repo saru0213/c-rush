@@ -1,20 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
-  Code2,
   Trophy,
-  Clock,
-  Users,
-  ArrowRight,
-  CheckCircle,
-  Zap,
-  Calendar,
-  MapPin,
-  Star,
-  Award,
   Medal,
+  Award,
+  Star,
 } from "lucide-react";
+import Image from "next/image";
 
-// Winners Component
 const WinnersSection = () => {
   const [activeYear, setActiveYear] = useState("1");
 
@@ -43,7 +35,7 @@ const WinnersSection = () => {
           score: 1720,
           solvedTime: "2h 52m",
           achievement: "Perfect Score + Fastest Solver",
-          currentRole: "2st at C-Rush 1.0 2k25 Finals",
+          currentRole: "2nd at C-Rush 1.0 2k25 Finals",
           image: "/winner2.jpg",
           quote:
             "An amazing experience that pushed my programming skills to the next level.",
@@ -56,57 +48,57 @@ const WinnersSection = () => {
           score: 1620,
           solvedTime: "3h 15m",
           achievement: "Perfect Score + Fastest Solver",
-          currentRole: "3st at C-Rush 1.0 2k25 Finals",
+          currentRole: "3rd at C-Rush 1.0 2k25 Finals",
           image: "/winner3.jpg",
           quote:
             "An amazing experience that pushed my programming skills to the next level.",
         },
       ],
     },
-    // 2: {
-    //   title: "C-Rush 2.0 2k25 Champions",
-    //   winners: [
-    //     {
-    //       position: 1,
-    //       name: "Arjun Sharma & Prathamesh Desai",
-    //       college: "GCOEY",
-    //       year: "First Year",
-    //       score: 1850,
-    //       solvedTime: "2h 45m",
-    //       achievement: "Perfect Score + Fastest Solver",
-    //       currentRole: "1st at C-Rush 2.0 2k25 Finals",
-    //       image: "/winner.png",
-    //       quote:
-    //         "C-Rush challenged me to think beyond conventional solutions. The problems were crafted perfectly!",
-    //     },
-    //     {
-    //       position: 2,
-    //       name: "Priya Patel",
-    //       college: "GCOEY",
-    //       year: "First Year",
-    //       score: 1720,
-    //       solvedTime: "2h 52m",
-    //       achievement: "Perfect Score + Fastest Solver",
-    //       currentRole: "2st at C-Rush 2.0 2k25 Finals",
-    //       image: "/winner.png",
-    //       quote:
-    //         "An amazing experience that pushed my programming skills to the next level.",
-    //     },
-    //     {
-    //       position: 3,
-    //       name: "Rahul Desai",
-    //       college: "GCOEY",
-    //       year: "First Year",
-    //       score: 1650,
-    //       solvedTime: "2h 58m",
-    //       achievement: "Perfect Score + Fastest Solver",
-    //       currentRole: "3rd at C-Rush 2.0 2k25 Finals",
-    //       image: "/winner.png",
-    //       quote:
-    //         "The competitive environment and challenging problems made this unforgettable.",
-    //     },
-    //   ],
-    // },
+    2: {
+      title: "C-Rush 2.0 2k25 Champions",
+      winners: [
+        {
+          position: 1,
+          name: "Arjun Sharma & Prathamesh Desai",
+          college: "GCOEY",
+          year: "First Year",
+          score: 1850,
+          solvedTime: "2h 45m",
+          achievement: "Perfect Score + Fastest Solver",
+          currentRole: "1st at C-Rush 2.0 2k25 Finals",
+          image: "/winner.png",
+          quote:
+            "C-Rush challenged me to think beyond conventional solutions. The problems were crafted perfectly!",
+        },
+        {
+          position: 2,
+          name: "Priya Patel",
+          college: "GCOEY",
+          year: "First Year",
+          score: 1720,
+          solvedTime: "2h 52m",
+          achievement: "Perfect Score + Fastest Solver",
+          currentRole: "2nd at C-Rush 2.0 2k25 Finals",
+          image: "/winner.png",
+          quote:
+            "An amazing experience that pushed my programming skills to the next level.",
+        },
+        {
+          position: 3,
+          name: "Rahul Desai",
+          college: "GCOEY",
+          year: "First Year",
+          score: 1650,
+          solvedTime: "2h 58m",
+          achievement: "Perfect Score + Fastest Solver",
+          currentRole: "3rd at C-Rush 2.0 2k25 Finals",
+          image: "/winner.png",
+          quote:
+            "The competitive environment and challenging problems made this unforgettable.",
+        },
+      ],
+    },
   };
 
   const currentWinners = winnersData[activeYear];
@@ -124,17 +116,19 @@ const WinnersSection = () => {
 
           {/* Year Selector */}
           <div className="flex justify-center space-x-4 mb-12">
-            {Object.keys(winnersData).map((year) => (
+            {Object.entries(winnersData).map(([year, data]) => (
               <button
                 key={year}
                 onClick={() => setActiveYear(year)}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all ${
+                className={`px-6 py-3 rounded-lg font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-yellow-400 ${
                   activeYear === year
                     ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-white"
                     : "bg-gray-800/50 text-gray-300 hover:bg-gray-700/50"
                 }`}
+                aria-pressed={activeYear === year}
+                aria-label={`View winners of ${data.title}`}
               >
-                {year}
+                {data.title}
               </button>
             ))}
           </div>
@@ -148,10 +142,10 @@ const WinnersSection = () => {
 
           {/* Podium Style Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            {currentWinners?.winners?.map((winner, index) => (
+            {currentWinners?.winners?.map((winner) => (
               <div
                 key={winner.position}
-                className={`relative bg-gray-800/30 backdrop-blur-sm border rounded-2xl p-8 text-center transition-all hover:scale-105 ${
+                className={`relative bg-gray-800/30 backdrop-blur-sm border rounded-2xl p-8 text-center transition-transform hover:scale-105 ${
                   winner.position === 1
                     ? "border-yellow-500/50 lg:order-2 lg:-mt-8"
                     : winner.position === 2
@@ -180,10 +174,13 @@ const WinnersSection = () => {
 
                 {/* Winner Photo */}
                 <div className="relative mb-6 mt-4">
-                  <img
+                  <Image
                     src={winner.image}
-                    alt={winner.name}
+                    alt={`Photo of ${winner.name}`}
+                    width={100}
+                    height={100}
                     className="w-24 h-24 rounded-full mx-auto border-4 border-gray-600 object-cover"
+                    loading="lazy"
                   />
                   <div
                     className={`absolute -bottom-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
@@ -239,43 +236,12 @@ const WinnersSection = () => {
 
                 {/* Quote */}
                 <blockquote className="text-sm text-gray-300 italic">
-                  "{winner.quote}"
+                  {winner.quote}
                 </blockquote>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Success Stories Stats */}
-        {/* <div className="bg-gradient-to-r from-yellow-600/20 to-orange-600/20 backdrop-blur-sm border border-yellow-500/30 rounded-2xl p-8 mb-12">
-          <h3 className="text-2xl font-bold text-center mb-8 text-yellow-300">
-            Success Stories
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-3xl font-bold text-yellow-400 mb-2">95%</div>
-              <div className="text-sm text-gray-300">
-                Winners in Top Companies
-              </div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-400 mb-2">
-                ₹12L+
-              </div>
-              <div className="text-sm text-gray-300">Average Package</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
-              <div className="text-sm text-gray-300">Alumni in FAANG</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-400 mb-2">
-                100+
-              </div>
-              <div className="text-sm text-gray-300">Success Stories</div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </section>
   );

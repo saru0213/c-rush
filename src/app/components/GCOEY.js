@@ -1,5 +1,4 @@
-import { CheckCircle, Code2, Trophy, Users } from "lucide-react";
-import Image from "next/image";
+import { CheckCircle } from "lucide-react";
 import React from "react";
 
 function GCOEY() {
@@ -31,6 +30,7 @@ function GCOEY() {
                           className="w-8 h-8 text-white ml-1"
                           fill="currentColor"
                           viewBox="0 0 24 24"
+                          aria-hidden="true"
                         >
                           <path d="M8 5v14l11-7z" />
                         </svg>
@@ -43,20 +43,19 @@ function GCOEY() {
                       </p>
                     </div>
                   </div>
-                 <video
-  src="gcoey.mp4"
-  poster="/winner"
-  width={600}
-  height={400}
-  className="w-full h-full object-cover opacity-60"
-  autoPlay
-  loop
-  muted
-  playsInline
->
-  Your browser does not support the video tag.
-</video>
-
+                  <video
+                    src="/gcoey.mp4"
+                    poster="/images/te.jpg"
+                    width={600}
+                    height={400}
+                    className="w-full h-full object-cover opacity-60"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
 
@@ -152,94 +151,6 @@ function GCOEY() {
               </div>
             </div>
           </div>
-
-          {/* Team Achievements */}
-          {/* <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center mb-12 text-orange-400">
-              Team Achievements
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-8 text-center hover:border-yellow-500/50 transition-all">
-                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Trophy className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-yellow-400">
-                  ICPC Regionals
-                </h4>
-                <p className="text-gray-300 text-sm">
-                  Qualified for ACM ICPC Asia Regionals multiple times, securing
-                  top positions among hundreds of teams.
-                </p>
-              </div>
-
-              <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-8 text-center hover:border-blue-500/50 transition-all">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Code2 className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-blue-400">
-                  National Hackathons
-                </h4>
-                <p className="text-gray-300 text-sm">
-                  Winners and finalists in major national hackathons and project
-                  expos.
-                </p>
-              </div>
-
-              <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700 rounded-xl p-8 text-center hover:border-green-500/50 transition-all">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-3 text-green-400">
-                  Team Rankings
-                </h4>
-                <p className="text-gray-300 text-sm">
-                  Consistently ranked among top 100 competitive programming
-                  teams in Maharashtra and national circuits.
-                </p>
-              </div>
-            </div>
-          </div> */}
-
-          {/* Competition History */}
-          {/* <div className="bg-gradient-to-r from-orange-600/20 to-red-600/20 backdrop-blur-sm border border-orange-500/30 rounded-2xl p-8">
-            <div className="text-center">
-              <h4 className="text-2xl font-bold mb-4 text-orange-300">
-                Recent Competition Highlights
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-                <div className="text-center">
-                  <div className="text-3xl mb-2">🏆</div>
-                  <h5 className="font-semibold text-orange-200">
-                    Smart India Hackathon
-                  </h5>
-                  <p className="text-sm text-gray-400">
-                    National Finalist 2023
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl mb-2">🌟</div>
-                  <h5 className="font-semibold text-orange-200">
-                    ACM ICPC Regionals
-                  </h5>
-                  <p className="text-sm text-gray-400">Top 50 Team</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl mb-2">💡</div>
-                  <h5 className="font-semibold text-orange-200">
-                    HackerEarth Circuits
-                  </h5>
-                  <p className="text-sm text-gray-400">Multiple Top 10s</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl mb-2">🚀</div>
-                  <h5 className="font-semibold text-orange-200">
-                    CodeChef Events
-                  </h5>
-                  <p className="text-sm text-gray-400">Regular Winners</p>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </section>
     </div>
